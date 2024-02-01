@@ -23,19 +23,21 @@ for fp in file_path:
 # Print the required output format          
 print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
-
-# Find out if the value of the current day is higher than the previous day
+# Create dictionaries to respective previous value, cash surplus and the day 
 previous_value = 0
 highest_surplus = 0
 highest_surplus_day = 0
 
+# Record of cashonhand and convert the the value to a float in the same time
 for record in cashonhand:
     current_day = record[0]
     current_value = float(record[1])
-    
+
+    #Calculate the surplus for cashonhand 
     if current_value > previous_value:
         surplus = current_value - previous_value
 
+    # Find out if the value of the current day is higher than the previous day
         if surplus > highest_surplus:
             highest_surplus_day = current_day
             highest_surplus = surplus
@@ -49,18 +51,21 @@ print(f"[HIGHEST CASH SURPLUS] DAY: {highest_surplus_day}, AMOUNT: SGD{highest_s
 # print the required output format:
 print(f"[CASH DEFICIT] CASH ON EACH DAY IS LOWER THAN THE PREVIOUS DAY")
 
-# # find out if the value of the current day is lower than the previous day
+# Create  dictionaries to respective previous value, cash deficits and the day 
 previous_value = 0
 highest_cash_deficit = 0 
 highest_deficit_day = 0
 
+# Record of cash on hand and convert the value to a float in the same time
 for record in cashonhand:
     current_day = record[0]
     current_value = float(record[1])
 
+    # Calculate the deficits for the cashonhand
     if current_value < previous_value:
         deficit = previous_value - current_value
 
+    # Find out the value of the current day is higher than the previous day
         if deficit > highest_cash_deficit:
             highest_deficit_day = current_day
             highest_cash_deficit = deficit 
@@ -70,25 +75,29 @@ print(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit_day}, AMOUNT: SGD{highest_c
 
 
 # Scenario 3
-# find out the value of the current data is lower or higher than the previous day
+# Create  dictionaries to respective previous value, cash deficits 
 previous_value = 0
 deficits = []
+
+# Record of cash on hand and convert the value to a float in the same time 
 for record in cashonhand:
     current_day = record[0]
     current_value = float(record[1])
-
+# Calculate the deficits for the cash on hand 
     deficit = previous_value - current_value
-    
+# Print the deficit values that is higher than the previous day 
     if current_value < previous_value:
         deficits.append({"day": current_day, "amount": deficit})
         print(f"[CASH DEFICIT] DAY: {current_day}, AMOUNT: SGD{deficit}")
     previous_value = current_value
 
-# Sort the top deficits based on amount (descending order)
+# Sort the top3 deficits based on amount
 def get_deficit_amount(value):
     return value ["amount"]
 cashonhand_deficit = sorted(deficits, key=get_deficit_amount, reverse=True)
 
+# Print out the top3 HIGHEST CASH DEFICITS
+# The highest cash deficit
 highest_deficit = cashonhand_deficit[0]
 print(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit['day']}, AMOUNT: SGD{highest_deficit['amount']}")
 

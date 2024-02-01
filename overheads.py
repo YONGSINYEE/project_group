@@ -21,10 +21,11 @@ for fp in file_path:
 # print(overheads)
 
 # Scenario 1
-# find out the category with the highest value
+# Create the dictionaries for the highest value and the highest category 
 highest_value = 0 
 highest_category = 0
 
+# Record of the overheads and find out the highest category and value in the same time
 for category, value in overheads:
     if value > highest_value:
         highest_value = value

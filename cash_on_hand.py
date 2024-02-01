@@ -51,7 +51,7 @@ print(f"[CASH DEFICIT] CASH ON EACH DAY IS LOWER THAN THE PREVIOUS DAY")
 
 # # find out if the value of the current day is lower than the previous day
 previous_value = 0
-highest_deficit = 0 
+highest_cash_deficit = 0 
 highest_deficit_day = 0
 
 for record in cashonhand:
@@ -61,12 +61,12 @@ for record in cashonhand:
     if current_value < previous_value:
         deficit = previous_value - current_value
 
-        if deficit > highest_deficit:
+        if deficit > highest_cash_deficit:
             highest_deficit_day = current_day
-            highest_deficit = deficit 
+            highest_cash_deficit = deficit 
     previous_value = current_value
 
-print(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit_day}, AMOUNT: SGD{highest_deficit}")
+print(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit_day}, AMOUNT: SGD{highest_cash_deficit}")
 
 
 # Scenario 3

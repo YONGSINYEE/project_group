@@ -17,7 +17,7 @@ for fp in file_path:
         for row in reader:
             cashonhand.append([row[0], row[1]])
 
-#print(cashonhand)
+# print(cashonhand)
 
 # Scenario 1 
 # Print the required output format          

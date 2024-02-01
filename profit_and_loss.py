@@ -18,7 +18,7 @@ for fp in file_path:
             profitandloss.append([row[0], row[1], row[2], row[3], row[4]])
 
 # print profit and loss after reading all files
-#print(profitandloss)
+# print(profitandloss)
 
 # Scenario 1
 # print the required output format
@@ -49,7 +49,7 @@ print(f"[NET PROFIT DEFICIT] NET PROFIT ON EACH DAY IS LOWER THAN PREVIOUS DAY")
 
 # find the value that is lower than the previous day
 previous_value = 0
-highest_deficit = 0
+highest_netprofit_deficit = 0
 highest_deficit_day = 0
 
 for record in profitandloss:
@@ -59,13 +59,13 @@ for record in profitandloss:
     if current_value < previous_value:
         deficit = previous_value - current_value
 
-        if deficit > highest_deficit:
+        if deficit > highest_netprofit_deficit:
             highest_deficit_day = current_day
-            highest_deficit = deficit
+            highest_netprofit_deficit = deficit
     previous_value = current_value
 
     
-print(f"[HIGHEST PROFIT DEFICIT] DAY {highest_deficit_day}, AMOUNT: SGD{highest_deficit}")
+print(f"[HIGHEST PROFIT DEFICIT] DAY {highest_deficit_day}, AMOUNT: SGD{highest_netprofit_deficit}")
 
 
 #Scenario 3

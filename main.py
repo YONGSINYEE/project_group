@@ -16,7 +16,7 @@ with file_path.open(mode="w", encoding="UTF-8", newline="") as file:
     # Second Scenario
     file.write(f"\n[HIGHEST OVERHEAD] {overheads.highest_category.upper()}: {overheads.highest_value}%\n")
     file.write(f"[CASH DEFICIT] CASH ON EACH DAY IS LOWER THAN THE PREVIOUS DAY\n")
-    file.write(f"[HIGHEST CASH DEFICIT] DAY: {cash_on_hand.highest_deficit_day}, AMOUNT: SGD{cash_on_hand.highest_deficit}\n")
+    file.write(f"[HIGHEST CASH DEFICIT] DAY: {cash_on_hand.highest_deficit_day}, AMOUNT: SGD{cash_on_hand.highest_cash_deficit}\n")
     file.write(f"[NET PROFIT DEFICIT] NET PROFIT ON EACH DAY IS LOWER THAN PREVIOUS DAY\n")
     file.write(f"[HIGHEST PROFIT DEFICIT] DAY {profit_and_loss.highest_deficit_day}, AMOUNT: SGD{profit_and_loss.highest_deficit}\n")
 

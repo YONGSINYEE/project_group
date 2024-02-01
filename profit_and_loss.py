@@ -18,7 +18,7 @@ for fp in file_path:
             profitandloss.append([row[0], row[1], row[2], row[3], row[4]])
 
 # print profit and loss after reading all files
-# print(profitandloss)
+#print(profitandloss)
 
 # Scenario 1
 # print the required output format

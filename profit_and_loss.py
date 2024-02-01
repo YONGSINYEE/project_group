@@ -44,7 +44,7 @@ for record in profitandloss:
             highest_surplus = surplus
     previous_value = current_value
         
-print(f"[HIGHEST NET PROFIT SURPLUS] DAY: {highest_surplus_day}, AMOUNT: SGD{highest_surplus}")
+print(f"[HIGHEST NET PROFIT SURPLUS] DAY: {highest_surplus_day}, AMOUNT: SGD{int(highest_surplus)}")
 
 #Scenario2 
 # print the required output format
@@ -71,7 +71,7 @@ for record in profitandloss:
     previous_value = current_value
 
     
-print(f"[HIGHEST PROFIT DEFICIT] DAY {highest_deficit_day}, AMOUNT: SGD{highest_netprofit_deficit}")
+print(f"[HIGHEST PROFIT DEFICIT] DAY {highest_deficit_day}, AMOUNT: SGD{int(highest_netprofit_deficit)}")
 
 #Scenario 3
 # Create  dictionaries to respective previous value, cash deficits 
@@ -89,7 +89,7 @@ for record in profitandloss:
     # Print the deficit values that is higher than the previous day 
     if current_value < previous_value:
         deficits.append({"day": current_day, "amount": deficit})
-        print(f"[NET PROFIT DEFICIT] DAY: {current_day}, AMOUNT: SGD{deficit}")
+        print(f"[NET PROFIT DEFICIT] DAY: {current_day}, AMOUNT: SGD{int(deficit)}")
     previous_value = current_value
 
 # Sort the top3 deficits based on amount 
@@ -100,12 +100,12 @@ net_profit_deficit = sorted(deficits, key=get_deficit_amount, reverse=True)
 #Print out the top3 HIGHEST NET PROFIT DEFICITS
 # The highest net profit deficit
 highest_deficit = net_profit_deficit[0]
-print(f"[HIGHEST NET PROFIT DEFICIT] DAY: {highest_deficit['day']}, AMOUNT: SGD{highest_deficit['amount']}")
+print(f"[HIGHEST NET PROFIT DEFICIT] DAY: {highest_deficit['day']}, AMOUNT: SGD{int(highest_deficit['amount'])}")
 
 # 2nd highest cash deficit
 second_deficit = net_profit_deficit[1]
-print (f"[2ND HIGHEST NET PROFIT DEFICIT] DAY: {second_deficit['day']}, AMOUNT: SGD {second_deficit['amount']}")
+print (f"[2ND HIGHEST NET PROFIT DEFICIT] DAY: {second_deficit['day']}, AMOUNT: SGD {int(second_deficit['amount'])}")
 
 # 3rd highest cash deficit
 third_deficit = net_profit_deficit[2]
-print(f"[3RD HIGHEST NET PROFIT DEFICIT] DAY: {third_deficit['day']}, AMOUNT: SGD{third_deficit['amount']}")
+print(f"[3RD HIGHEST NET PROFIT DEFICIT] DAY: {third_deficit['day']}, AMOUNT: SGD{int(third_deficit['amount'])}")

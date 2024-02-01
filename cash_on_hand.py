@@ -43,7 +43,7 @@ for record in cashonhand:
             highest_surplus = surplus
     previous_value = current_value
 
-print(f"[HIGHEST CASH SURPLUS] DAY: {highest_surplus_day}, AMOUNT: SGD{highest_surplus}")
+print(f"[HIGHEST CASH SURPLUS] DAY: {highest_surplus_day}, AMOUNT: SGD{int(highest_surplus)}")
 
 
 
@@ -71,7 +71,7 @@ for record in cashonhand:
             highest_cash_deficit = deficit 
     previous_value = current_value
 
-print(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit_day}, AMOUNT: SGD{highest_cash_deficit}")
+print(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit_day}, AMOUNT: SGD{int(highest_cash_deficit)}")
 
 
 # Scenario 3
@@ -88,7 +88,7 @@ for record in cashonhand:
 # Print the deficit values that is higher than the previous day 
     if current_value < previous_value:
         deficits.append({"day": current_day, "amount": deficit})
-        print(f"[CASH DEFICIT] DAY: {current_day}, AMOUNT: SGD{deficit}")
+        print(f"[CASH DEFICIT] DAY: {current_day}, AMOUNT: SGD{int(deficit)}")
     previous_value = current_value
 
 # Sort the top3 deficits based on amount
@@ -99,12 +99,12 @@ cashonhand_deficit = sorted(deficits, key=get_deficit_amount, reverse=True)
 # Print out the top3 HIGHEST CASH DEFICITS
 # The highest cash deficit
 highest_deficit = cashonhand_deficit[0]
-print(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit['day']}, AMOUNT: SGD{highest_deficit['amount']}")
+print(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit['day']}, AMOUNT: SGD{int(highest_deficit['amount'])}")
 
 # 2nd highest cash deficit
 second_deficit = cashonhand_deficit[1]
-print (f"[2ND HIGHEST CASH DEFICIT] DAY: {second_deficit['day']}, AMOUNT: SGD {second_deficit['amount']}")
+print (f"[2ND HIGHEST CASH DEFICIT] DAY: {second_deficit['day']}, AMOUNT: SGD {int(second_deficit['amount'])}")
 
 # 3rd highest cash deficit
 third_deficit = cashonhand_deficit[2]
-print(f"[3RD HIGHEST CASH DEFICIT] DAY: {third_deficit['day']}, AMOUNT: SGD{third_deficit['amount']}")
+print(f"[3RD HIGHEST CASH DEFICIT] DAY: {third_deficit['day']}, AMOUNT: SGD{int(third_deficit['amount'])}")
